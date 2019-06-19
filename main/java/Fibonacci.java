@@ -17,7 +17,6 @@ public class Fibonacci {
         int f[] = new int[n + 1];
         int i;
 
-
         f[0] = 0;
 
         if (n > 0) {
@@ -28,10 +27,8 @@ public class Fibonacci {
                 f[i] = f[i - 1] + f[i - 2];
             }
         }
-
         return f[n];
     }
-
 }
 
 

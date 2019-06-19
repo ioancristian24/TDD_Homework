@@ -11,9 +11,13 @@ public class CustomStack {
         size = 0;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
 
-        return myStack[size] == 0;
+        if (size == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public int getSize() {
@@ -40,23 +44,36 @@ public class CustomStack {
         myStack = c;
     }
 
-    public int get (int index){
+    public int get(int index) {
 
         System.out.println("Dimensiunea array-ului este: " + size + "/" + myStack.length);
 
-        for (int i = 0; i < size; i++){
-            System.out.print(myStack[i] + " ");
+        for (int i = 0; i < size; i++) {
+            System.out.print(i + ": " + myStack[i] + "  ");
         }
         System.out.println();
         return myStack[index];
     }
 
-    public int peek (){
+    public int search(int element) {
+
+        System.out.println("Dimensiunea array-ului este: " + size + "/" + myStack.length);
+
+        for (int i = 0; i < size; i++) {
+
+            if (myStack[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public int peek() {
         return myStack[size - 1];
     }
 
-    public int pop(){
-        int value = myStack[size -1];
+    public int pop() {
+        int value = myStack[size - 1];
         myStack[size - 1] = 0;
         size--;
         return value;

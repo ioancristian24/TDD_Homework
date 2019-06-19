@@ -20,6 +20,13 @@ public class CustomStackTest {
     }
 
     @Test
+    public void testWhenStackIsEmptyThenIsEmptyMethodReturnsFalse(){
+
+        myStack.push(5);
+        assertEquals(false,myStack.isEmpty());
+    }
+
+    @Test
     public void testWhenAnElementIsAddedToAnEmptyStackThenPushMethodReturnsThatElement(){
 
         assertEquals(5,myStack.push(5));
@@ -51,6 +58,17 @@ public class CustomStackTest {
 
         assertEquals(78, element1);
         assertEquals(45, element2);
+    }
+
+    @Test
+    public void testWhenAnElementIsSearchedIntoStackThenSearchMethodReturnsItsIndex(){
+
+        myStack.push(78);
+        myStack.push(45);
+        myStack.push(25);
+
+        assertEquals(-1, myStack.search(69));
+
     }
 
     @Test
